@@ -25,6 +25,63 @@ public class ObjectQueueBidirectional
         size++;
     }
 
+    public Object pull()
+    {
+        if (size == 0)
+        {
+            return null;
+        }
+
+        Object obj = head.getObject();
+        head = head.getNext();
+        head.setPrev(null);
+
+        if (head == null)
+        {
+            tail = null;
+        }
+
+        size--;
+        return obj;
+    }
+
+    public Object get(int index)
+    {
+        if (size == 0 || index >= size || index < 0)
+        {
+            return null;
+        }
+
+        ObjectBox current = new ObjectBox();
+
+        if (index < size / 2)
+        {
+            current = head;
+
+            for (int i = 1; i <= index; i++)
+            {
+                current = current.getNext();
+            }
+        }
+        else
+        {
+            current = tail;
+
+            for (int i = size - 1; i > index; i--)
+            {
+                current = current.getPrev();
+            }
+        }
+
+        Object obj = current.getObject();
+        return obj;
+    }
+
+    public int size()
+    {
+        return size;
+    }
+
     private class ObjectBox
     {
         private Object object;
