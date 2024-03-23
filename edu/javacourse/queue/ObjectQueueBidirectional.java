@@ -34,7 +34,6 @@ public class ObjectQueueBidirectional
 
         Object obj = head.getObject();
         head = head.getNext();
-        head.setPrev(null);
 
         if (head == null)
         {

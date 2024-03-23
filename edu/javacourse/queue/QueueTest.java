@@ -50,5 +50,29 @@ public class QueueTest
         }
 
         System.out.println("End");
+
+        System.out.println("Start");
+
+        ObjectQueueBidirectional queueBidirectional = new ObjectQueueBidirectional();
+
+        for (int i = 0; i < 10; i++)
+        {
+            queueBidirectional.push("Строка:" + i);
+        }
+
+        System.out.println("Get -10 " + queueBidirectional.get(-10));
+        System.out.println("Get 4 " + queueBidirectional.get(4));
+        System.out.println("Get 5 " + queueBidirectional.get(5));
+        System.out.println("Get 9 " + queueBidirectional.get(9));
+        System.out.println();
+
+        while (queueBidirectional.size() > 0)
+        {
+            String s = (String) queueBidirectional.pull();
+            System.out.println(s);
+            System.out.println("Строк в очереди:" + queueBidirectional.size());
+        }
+
+        System.out.println("End");
     }
 }
