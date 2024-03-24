@@ -74,5 +74,29 @@ public class QueueTest
         }
 
         System.out.println("End");
+
+        System.out.println();
+        System.out.println("Start");
+
+        ObjectStack stack = new ObjectStack();
+
+        for (int i = 0; i < 15; i++)
+        {
+            stack.push("new object:" + i);
+        }
+
+        System.out.println("Get -15 " + stack.get(-15));
+        System.out.println("Get 3 " + stack.get(3));
+        System.out.println("Get 14 " + stack.get(14));
+        System.out.println("Get 9 " + stack.get(9));
+        System.out.println();
+
+        while (stack.size() > 0)
+        {
+            System.out.println(stack.pull());
+            System.out.println("Строк в стеке:" + stack.size());
+        }
+
+        System.out.println("End");
     }
 }
