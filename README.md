@@ -38,13 +38,48 @@ class Robot{
 ```
 * To store a list of line coordinates in the form of a queue, 
 we use the QueueObject class, which we implement ourselves.
+```mermaid
+classDiagram
+class QueueObject{
+    -Object object
+    -ObjectBox next
+    +getObject() Object
+    +setObject(object: Object)
+    +getNext() ObjectBox
+    +setNext(next: ObjectBox)
+}
+```
 * To store the coordinates of one segment of the path, 
 we implement the RobotLine class. This is a simple class 
 that includes 4 numbers - the coordinates of the starting point (X1, Y1) 
 and the coordinates of the ending point (X2, Y2).
+```mermaid
+classDiagram
+class RobotLine{
+    -double x1
+    -double y1
+    -double x2
+    -double y2
+    +RobotLine(x1: double, y1: double, x2: double, y2: double)
+    +getX1() double
+    +getY1() double
+    +getX2() double
+    +getY2() double
+}
+```
 * We implement the RobotPathComponent class, 
 which inherits from the JComponent class. A Robot with its own list of path 
 segments is passed to this class.
+```mermaid
+classDiagram
+class JComponent
+JComponent --|> RobotPathComponent
+class RobotPathComponent{
+    -Robot robot
+    +RobotPathComponent(robot: Robot)
+    #paintComponent(g: Graphics) void
+}
+```
 * In the paintComponent method, by iterating through all the segments, 
 we get the coordinates of each and draw a line by calling the drawLine 
 method of the Graphics class.
