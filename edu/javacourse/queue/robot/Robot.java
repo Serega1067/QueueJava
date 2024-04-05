@@ -1,11 +1,13 @@
 package edu.javacourse.queue.robot;
 
+import edu.javacourse.queue.robot.objectQueueBidirectional.ObjectQueueBidirectional;
+
 public class Robot
 {
     private double x = 0;
     private double y = 0;
     protected double course = 0;
-    private ObjectQueue<RobotLine> linesQueue = new ObjectQueue<RobotLine>();
+    private ObjectQueueBidirectional linesQueue = new ObjectQueueBidirectional();
 
     public Robot (double x, double y)
     {
@@ -18,8 +20,8 @@ public class Robot
         double oldX = x;
         double oldY = y;
 
-        x += distance * Math.cos(course / 180 * Math.PI());
-        y += distance * Math.sin(course / 180 * Math.PI());
+        x += distance * Math.cos(course / 180 * Math.PI);
+        y += distance * Math.sin(course / 180 * Math.PI);
 
         linesQueue.push(new RobotLine(oldX, oldY, x, y));
     }
@@ -54,9 +56,8 @@ public class Robot
         this.course = course;
     }
 
-    public ObjectQueue<RobotLine> getLinesQueue()
+    public ObjectQueueBidirectional getLinesQueue()
     {
         return linesQueue;
     }
 }
-

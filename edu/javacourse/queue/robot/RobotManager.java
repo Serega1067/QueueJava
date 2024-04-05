@@ -1,6 +1,6 @@
 package edu.javacourse.queue.robot;
 
-public class Main
+public class RobotManager
 {
     public static void main(String[] args)
     {

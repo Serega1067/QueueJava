@@ -36,8 +36,27 @@ class Robot{
     +forward(distance: int) void
 }
 ```
-* To store a list of line coordinates in the form of a queue, 
-we use the QueueObject class, which we implement ourselves.
+```mermaid
+---
+title: Implementation of the method forward(int distance)
+---
+flowchart TB
+    Start([start])
+    A[
+    xOld = x
+    yOld = y
+    ]
+    B[
+    finding x using distance and course
+    finding y using distance and course
+    ]
+    C[
+    The coordinates of the start xOld, yOld and end x, y 
+    are added to the queue
+    ]
+    End([end])
+    Start-->A-->B-->C-->End
+```
 ```mermaid
 classDiagram
 class QueueObject{
