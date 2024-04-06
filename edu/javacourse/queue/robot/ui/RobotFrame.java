@@ -8,7 +8,7 @@ public class RobotFrame extends JFrame
     public RobotFrame(Robot robot)
     {
         setTitle("Robot Frame");
-        add(new RobotPathComponent(robot);
+        add(new RobotPathComponent(robot));
         setBounds(100, 100, 500, 500);
     }
 }

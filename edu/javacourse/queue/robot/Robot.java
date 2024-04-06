@@ -1,6 +1,7 @@
 package edu.javacourse.queue.robot;
 
 import edu.javacourse.queue.robot.objectQueueBidirectional.ObjectQueueBidirectional;
+import edu.javacourse.queue.robot.RobotLine;
 
 public class Robot
 {

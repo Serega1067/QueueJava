@@ -40,7 +40,7 @@ public class ObjectQueueBidirectional
             tail = null;
         }
 
-        head.setPrev(null);
+//        head.setPrev(null);
         size--;
 
         return obj;

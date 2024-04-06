@@ -21,7 +21,8 @@ public class RobotPathComponent extends JComponent
 
         for (int i = 0; i < robot.getLinesQueue().size(); i++)
         {
-            RobotLine rl = (RobotLine) robot.getLinesQueue().pull();
+            RobotLine rl;
+            rl = (RobotLine) robot.getLinesQueue().pull();
             int x1 = (int) Math.round(rl.getX1());
             int y1 = (int) Math.round(rl.getY1());
             int x2 = (int) Math.round(rl.getX2());
