@@ -59,13 +59,26 @@ flowchart TB
 ```
 ```mermaid
 classDiagram
-class QueueObject{
+class QueueBox{
     -Object object
     -ObjectBox next
+    -ObjectBox prev
     +getObject() Object
     +setObject(object: Object)
     +getNext() ObjectBox
     +setNext(next: ObjectBox)
+    +getPrev() ObjectBox
+    +setPrev(prev: ObjectBox)
+}
+QueueBox --o ObjectQueueBidirectional
+class ObjectQueueBidirectional{
+    -ObjectBox head = null
+    -ObjectBox tail = null
+    -int size = 0
+    +push(obj: Object)
+    +pull() Object
+    +get(index: int)
+    +size() int
 }
 ```
 * To store the coordinates of one segment of the path, 
