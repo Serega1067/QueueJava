@@ -59,7 +59,7 @@ flowchart TB
 ```
 ```mermaid
 classDiagram
-class QueueBox{
+class ObjectBox{
     -Object object
     -ObjectBox next
     -ObjectBox prev
@@ -70,7 +70,7 @@ class QueueBox{
     +getPrev() ObjectBox
     +setPrev(prev: ObjectBox)
 }
-QueueBox --o ObjectQueueBidirectional
+ObjectBox --o ObjectQueueBidirectional
 class ObjectQueueBidirectional{
     -ObjectBox head = null
     -ObjectBox tail = null
